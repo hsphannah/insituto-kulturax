@@ -1,0 +1,332 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    /* Degradê de azul no fundo */
+    background: linear-gradient(to bottom, #ADD8E6, #87CEEB, #6495ED, #4169E1, #00008B); /* Tons de azul */
+    background-attachment: fixed; /* Mantém o degradê fixo ao rolar */
+    :root {
+    --header-height: 70px; /* Defina a altura aproximada do seu header aqui */
+}
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    color: #0a1128; /* Um tom de azul escuro para títulos */
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #4169E1; /* Azul médio */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00008B; /* Azul escuro */
+}
+
+/* Header */
+.header {
+    min-height: var(--header-height);
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
+    color: #0a1128;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+}
+
+.header .logo {
+    margin: 0;
+    font-size: 1.8em;
+    color: #0a1128;
+}
+
+.header .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header .nav ul li {
+    margin-left: 20px;
+}
+
+.header .nav ul li a {
+    color: #0a1128;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header .nav ul li a:hover {
+    color: #4169E1; /* Azul médio no hover */
+}
+
+.header .nav .btn-doar {
+    background-color: #00008B; /* Azul escuro */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.header .nav .btn-doar:hover {
+    background-color: #4169E1; /* Azul médio no hover */
+}
+
+/* Menu Hambúrguer (Apenas para mobile) */
+.hamburger-menu {
+    display: none; /* Esconde por padrão em desktop */
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: #0a1128;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Hero Section com imagem de fundo */
+.hero {
+    background-image: url('img/hero-background.jpg'); /* **Mude para o nome da sua imagem!** */
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 100px 0;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Necessário para o pseudo-elemento overlay */
+    margin-bottom: 40px;
+}
+
+/* Overlay para escurecer a imagem e manter a legibilidade do texto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Transparência para ver a imagem */
+    z-index: 1; /* Garante que o overlay fique abaixo do conteúdo */
+}
+
+.hero .container {
+    position: relative; /* Coloca o conteúdo acima do overlay */
+    z-index: 2;
+    color: white; /* Texto branco para contraste com o overlay */
+}
+
+.hero h2, .hero p {
+    color: white; /* Garante que as letras fiquem brancas */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Sombra para melhor legibilidade */
+}
+
+
+/* Seções de Conteúdo */
+.section-padded {
+    padding: 60px 0;
+    margin-bottom: 40px; /* Espaço entre seções */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.section-padded.bg-light {
+    background-color: rgba(245, 245, 245, 0.9); /* Fundo branco ligeiramente mais claro */
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.acao-item {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.acao-item h4 {
+    color: #4169E1; /* Azul médio para títulos de ação */
+    margin-top: 0;
+}
+
+.noticia-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.noticia-item h4 {
+    color: #0a1128;
+    margin-top: 0;
+}
+
+.noticia-item a {
+    color: #4169E1;
+    text-decoration: none;
+    font-weight: bold;
+}
+.acoes-carousel-container {
+    overflow: hidden; /* Garante que nada vaze do contêiner */
+}
+
+.acoes-carousel {
+    display: flex;
+    gap: 20px; /* Um espaçamento entre os itens do carrossel */
+    overflow-x: auto; /* Permite a rolagem horizontal */
+    padding-bottom: 20px; /* Espaço para a sombra não ser cortada */
+    
+    /* Mágica para esconder a barra de rolagem */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.acoes-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+/* Parceiros */
+.parceiros-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.parceiros-logos img {
+    max-width: 150px; /* Tamanho máximo para as logos */
+    height: auto;
+    filter: grayscale(80%); /* Deixa as logos em tons de cinza */
+    transition: filter 0.3s ease;
+}
+
+.parceiros-logos img:hover {
+    filter: grayscale(0%); /* Mostra a cor original ao passar o mouse */
+}
+
+/* Footer */
+.footer {
+    background-color: #0a1128; /* Azul escuro */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: row; /* Volta para linha para acomodar o hambúrguer */
+        justify-content: space-between; /* Espaçamento entre logo e hambúrguer */
+        align-items: center;
+    }
+
+    .hamburger-menu {
+        display: block; /* Mostra o menu hambúrguer */
+    }
+
+    .header .nav {
+        display: none; /* Esconde a navegação padrão em mobile */
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98);
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding-bottom: 10px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .header .nav.active {
+        display: block; /* Mostra a navegação quando a classe 'active' está presente */
+    }
+
+    .header .nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .header .nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .parceiros-logos {
+        gap: 15px; /* Reduz o espaçamento entre as logos em mobile */
+    }
+
+    .parceiros-logos img {
+        max-width: 120px; /* Reduz o tamanho das logos em mobile */
+    }
+}
